@@ -15,7 +15,6 @@ A basic ZIP compression utility implemented in C/C++ using Huffman coding for lo
 ## Documentation
 * [SRS & Deliverable 1 Document (Markdown)](docs/SRS_Deliverable1.md)
 * [SRS & Deliverable 1 Document (PDF)](docs/SRS_Deliverable1.pdf)
-=======
+
 # SE-MiniProject-FileCompression
 File Compression Tool using Huffman Coding in C/C++ - Software Engineering Mini Project
->>>>>>> 432afaa3d3b795bb0c143737c7bb22f3b2773a48
