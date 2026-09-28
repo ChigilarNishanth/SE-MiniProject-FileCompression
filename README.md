@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # File Compression Tool (Basic ZIP Implementation)
 
 **Course**: Software Engineering Mini-Project  
