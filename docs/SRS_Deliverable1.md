@@ -164,6 +164,49 @@ flowchart LR
     UC1 --> OS
     UC2 --> OS
 ```
+# PART 2: Software Test Plan (IEEE Std 829 Format)
+
+## 1. Introduction & Test Overview
+This Test Plan defines the testing scope, strategy, verification items, and pass/fail criteria for validating the C/C++ File Compression Utility (`czip`) across the software development lifecycle.
+
+## 2. Items to be Tested
+* File I/O binary stream reading and writing routines.
+* 256-byte frequency counting and Min-Heap priority queue tree generation.
+* Bitstream bit-shift buffer packing and unpacking routines.
+* Header magic byte (`0x435A`) validation and metadata parser.
+* Command-line argument syntax processor and help manual generator.
+
+## 3. Features to be Tested
+* Functional compression and decompression accuracy (100% bit identity verification).
+* System throughput across ASCII text, source code, images, and binary executables.
+* Error handling for missing files, permission errors, and corrupted archives.
+
+## 4. Features Not to be Tested
+* Multi-threaded / parallel execution algorithms (single-threaded application scope).
+* Graphical User Interface (GUI) components (pure CLI execution).
+
+## 5. Testing Strategy & Security Validation
+
+### 5.1 Security Validation Specification
+* **Invalid Header Attack Test**: Supply arbitrary binary files with a `.czip` extension lacking the `0x435A` magic byte header. Confirm the application aborts cleanly with exit code `1` (`SEC_ERR_BAD_HEADER`) without dynamic heap allocation leaks.
+* **Truncated Bitstream Test**: Feed artificially truncated archive payloads to the decompression engine. Confirm tree traversal enforces strict bounds checking, failing safely with exit code `1` (`SEC_ERR_MALFORMED_STREAM`) without triggering a Segmentation Fault.
+
+### 5.2 Requirements Traceability Matrix (RTM)
+
+| Requirement ID | Test Item | Test Method | Target Pass Criteria |
+| :--- | :--- | :--- | :--- |
+| **FR-01** | Compression Engine | Black-Box / Integration | Output file generated with valid `.czip` extension and structure. |
+| **FR-02** | Decompression Engine | Black-Box / Integrity | Cryptographic SHA-256 hash match between source and restored file. |
+| **FR-03 & FR-04** | Huffman Module | Unit Testing | Tree generation produces minimal weighted prefix paths. |
+| **FR-05** | Header Serialization | Integration | Header contains valid `0x435A` magic bytes and original file size. |
+| **FR-06** | Bitstream Packing | Unit Testing | Bit-shift buffer packs bits sequentially and aligns on 8-bit boundaries. |
+| **FR-07** | Statistics Output | System Testing | Terminal prints original size, compressed size, % saved, and execution time. |
+| **FR-08** | Help Menu | System Testing | Invoking `czip --help` displays usage manual to standard error. |
+| **NFR-01** | Performance | Benchmark Testing | Throughput exceeds 10 MB/s for standard text and uncompressed binary input. |
+| **NFR-03** | Data Integrity | SHA-256 Verification | Zero byte difference verified using system binary comparison (`cmp`). |
+| **SEC-REQ-01** | Header Validation | Penetration Testing | Clean abort with exit code `1` on missing or corrupt magic header signature. |
+| **SEC-REQ-02** | Stream Bounds Check | Fuzzing Test | Zero buffer overflow or memory corruption on truncated bitstreams. |
+
 # PART 3: Software Architecture & Design Specification
 
 ## 1. Architectural Design
