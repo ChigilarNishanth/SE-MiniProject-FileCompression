@@ -163,7 +163,7 @@ flowchart LR
 
     UC1 --> OS
     UC2 --> OS
-
+```
 # PART 3: Software Architecture & Design Specification
 
 ## 1. Architectural Design
