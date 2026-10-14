@@ -163,3 +163,104 @@ flowchart LR
 
     UC1 --> OS
     UC2 --> OS
+
+# PART 3: Software Architecture & Design Specification
+
+## 1. Architectural Design
+
+### 1.1 Architectural Pattern
+The system implements a **Pipeline Architecture** (Pipes & Filters pattern):
+
+```text
+[ Input File ] --> [ Frequency Analyzer ] --> [ Min-Heap Tree Builder ]
+    |
+[ Output File ] <-- [ Bitstream Writer ] <-- [ Huffman Bit Encoder ]
+```
+
+### 1.2 Component Structure & Module Descriptions
+
+```mermaid
+graph TD
+    subgraph CLI_Layer [CLI & Interface Layer]
+        CLI[CLI Parser & Controller - cli_main.cpp]
+    end
+
+    subgraph Core_Engine [Core Processing Engine]
+        FREQ[Frequency Analyzer - freq_analyzer.cpp]
+        TREE[Huffman Tree Builder - huffman_tree.cpp]
+        BIT[Bitstream Packing Engine - bit_stream.cpp]
+    end
+
+    subgraph Storage_Security [Storage & Security Layer]
+        ARCH[Archive Storage IO - archive_io.cpp]
+        SEC[Header & Magic Byte Validator]
+    end
+
+    CLI --> FREQ
+    CLI --> TREE
+    CLI --> ARCH
+    ARCH --> SEC
+    TREE --> BIT
+    BIT --> ARCH
+```
+
+* **CLI Module (`cli_main.cpp`)**: Parses user arguments (`-c`, `-d`, `--help`).
+* **Frequency Engine (`freq_analyzer.cpp`)**: Reads source file bytes and populates 256-element array.
+* **Huffman Engine (`huffman_tree.cpp`)**: Constructs binary tree via `std::priority_queue` Min-Heap.
+* **Bitstream I/O Engine (`bit_stream.cpp`)**: Manages bit-level buffer shifting and byte alignment.
+* **Archive Storage Module (`archive_io.cpp`)**: Reads/writes magic header bytes (`0x435A`) and payload.
+
+### 1.3 Security Architecture
+
+The application uses a **Fail-Safe Staging Pipeline**. Heap allocation for decompression tree construction occurs only after validating magic header signature `0x435A`, preventing memory exhaustion attacks from malicious binary files.
+
+---
+
+## 2. Low-Level Design & Interfaces
+
+### 2.1 Sequence Diagrams
+
+#### Compression Sequence Workflow
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User
+    participant CLI as CLI Main
+    participant Freq as Frequency Engine
+    participant Tree as Huffman Engine
+    participant Bit as Bitstream Writer
+    participant Arch as Archive Storage
+
+    User->>CLI: czip -c input.txt archive.czip
+    CLI->>Freq: analyze_frequency(input.txt)
+    Freq-->>CLI: Frequency Table (256 entries)
+    CLI->>Tree: build_huffman_tree(table)
+    Tree-->>CLI: Bit Code Mapping Table
+    CLI->>Arch: write_header(archive.czip, header_data)
+    CLI->>Bit: encode_payload(input.txt, codes)
+    Bit-->>Arch: write_packed_bytes()
+    Arch-->>User: Compression Complete
+```
+
+#### Decompression Sequence Workflow
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User
+    participant CLI as CLI Main
+    participant Arch as Archive Storage
+    participant Sec as Security Validator
+    participant Tree as Huffman Engine
+    participant Bit as Bitstream Reader
+
+    User->>CLI: czip -d archive.czip restored.txt
+    CLI->>Arch: read_header(archive.czip)
+    Arch->>Sec: validate_magic_header(0x435A)
+    Sec-->>CLI: Header Validated
+    CLI->>Tree: rebuild_tree(frequency_table)
+    CLI->>Bit: decode_bitstream(tree_root)
+    Bit->>Arch: write_restored_bytes(restored.txt)
+    Arch-->>User: Decompression Complete
+```
