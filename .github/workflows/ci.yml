@@ -1,12 +1,45 @@
-#ifndef CLI_PARSER_HPP
-#define CLI_PARSER_HPP
+name: C++ CI
 
-#include "common.hpp"
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
-class CLIParser {
-public:
-    static CLIConfig parse(int argc, char* argv[]);
-    static void print_usage(const char* program_name);
-};
+jobs:
+  build-and-smoke-test:
+    runs-on: ubuntu-latest
 
-#endif // CLI_PARSER_HPP
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install build tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y g++
+
+      - name: Build
+        run: |
+          g++ -std=c++17 -Wall -Wextra -Wpedantic -Iinclude \
+            src/main.cpp src/cli_parser.cpp src/archive_io.cpp \
+            -o czip
+
+      - name: Smoke test CLI
+        run: |
+          ./czip --help >/tmp/help.txt 2>&1
+          grep -q "Usage:" /tmp/help.txt
+
+      - name: Smoke test header write/read flow
+        run: |
+          printf "ABABA" > sample.txt
+          ./czip -c sample.txt sample.czip
+          ./czip -d sample.czip restored.txt
+
+      - name: Smoke test invalid archive detection
+        run: |
+          printf "NO" > fake.czip
+          if ./czip -d fake.czip out.txt; then
+            echo "Expected invalid archive detection to fail"
+            exit 1
+          fi
