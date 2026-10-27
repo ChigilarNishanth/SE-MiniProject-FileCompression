@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="491.27559055118115" height="355" preserveAspectRatio="xMinYMin meet" viewBox="0 0 491 355" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="491.27559055118115" height="355"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-355)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="-5" y="314" width="80" height="27" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; fill: rgb(92%,96%,96%); fill-rule: evenodd;"/>
+			<text x="24.9965" y="324" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,648) scale(1,-1)">User</text>
+			<path d="M 35,32 L 35,314 Z" style="stroke: rgb(32%,39%,46%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 3, 3;"/>
+			<rect x="111" y="314" width="80" height="27" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; fill: rgb(92%,96%,96%); fill-rule: evenodd;"/>
+			<text x="143.7505" y="324" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,648) scale(1,-1)">CLI</text>
+			<path d="M 151,32 L 151,314 Z" style="stroke: rgb(32%,39%,46%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 3, 3;"/>
+			<rect x="258" y="314" width="80" height="27" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; fill: rgb(92%,96%,96%); fill-rule: evenodd;"/>
+			<text x="284.9995" y="324" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,648) scale(1,-1)">Model</text>
+			<path d="M 298,32 L 298,314 Z" style="stroke: rgb(32%,39%,46%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 3, 3;"/>
+			<rect x="404" y="314" width="80" height="27" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; fill: rgb(92%,96%,96%); fill-rule: evenodd;"/>
+			<text x="410.241" y="324" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,648) scale(1,-1)">Codec / storage</text>
+			<path d="M 444,32 L 444,314 Z" style="stroke: rgb(32%,39%,46%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 3, 3;"/>
+			<path d="M 35,289 L 151,289 Z" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="151 289, 146.6121 291.3971, 146.6121 286.6029" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,50%); fill-rule: evenodd;"/>
+			<text x="61.432" y="295" style="font-family: Helvetica; font-size: 8px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,590) scale(1,-1)">1. -c input archive</text>
+			<path d="M 151,259 L 298,259 Z" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="298 259, 293.6121 261.3971, 293.6121 256.6029" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,50%); fill-rule: evenodd;"/>
+			<text x="186.372" y="265" style="font-family: Helvetica; font-size: 8px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,530) scale(1,-1)">2. count bytes + CRC</text>
+			<path d="M 298,229 L 151,229 Z" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 4, 3;"/>
+			<polygon points="151 229, 155.3879 226.6029, 155.3879 231.3971" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,50%); fill-rule: evenodd;"/>
+			<text x="191.256" y="235" style="font-family: Helvetica; font-size: 8px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,470) scale(1,-1)">3. tree + codebook</text>
+			<path d="M 151,199 L 444,199 Z" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="444 199, 439.6121 201.3971, 439.6121 196.6029" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,50%); fill-rule: evenodd;"/>
+			<text x="252.588" y="205" style="font-family: Helvetica; font-size: 8px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,410) scale(1,-1)">4. write header to staging</text>
+			<path d="M 151,169 L 444,169 Z" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="444 169, 439.6121 171.3971, 439.6121 166.6029" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,50%); fill-rule: evenodd;"/>
+			<text x="237.692" y="175" style="font-family: Helvetica; font-size: 8px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,350) scale(1,-1)">5. second pass: encode bitstream</text>
+			<path d="M 151,139 L 298,139 Z" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="298 139, 293.6121 141.3971, 293.6121 136.6029" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,50%); fill-rule: evenodd;"/>
+			<text x="185.596" y="145" style="font-family: Helvetica; font-size: 8px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,290) scale(1,-1)">6. verify source stable</text>
+			<path d="M 151,109 L 444,109 Z" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="444 109, 439.6121 111.3971, 439.6121 106.6029" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,50%); fill-rule: evenodd;"/>
+			<text x="258.148" y="115" style="font-family: Helvetica; font-size: 8px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,230) scale(1,-1)">7. flush, close, publish</text>
+			<path d="M 151,79 L 35,79 Z" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 4, 3;"/>
+			<polygon points="35 79, 39.38791 76.60287, 39.38791 81.39713" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,50%); fill-rule: evenodd;"/>
+			<text x="58.988" y="85" style="font-family: Helvetica; font-size: 8px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,170) scale(1,-1)">8. statistics / failure</text>
+			<text x="120.90579527559058" y="15" style="font-family: Helvetica; font-size: 8px;fill: rgb(32%,39%,46%); stroke:none;" transform="translate(0,30) scale(1,-1)">Failure: exit 1, no published destination, provisional output cleaned up.</text>
+		</g>
+	</g>
+</svg>

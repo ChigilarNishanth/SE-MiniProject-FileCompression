@@ -1,0 +1,42 @@
+{
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "architecture": "arm64",
+  "cases": [
+    {
+      "fixture": "text",
+      "input_bytes": 500000000,
+      "archive_bytes": 285105010,
+      "sha256_match": true,
+      "metrics": {
+        "-c": {
+          "seconds": 10.421167375,
+          "MB_per_second": 47.97926969290233,
+          "max_rss_bytes": 1687552
+        },
+        "-d": {
+          "seconds": 16.685517166,
+          "MB_per_second": 29.966107434706768,
+          "max_rss_bytes": 1703936
+        }
+      }
+    },
+    {
+      "fixture": "binary",
+      "input_bytes": 500000000,
+      "archive_bytes": 500002072,
+      "sha256_match": true,
+      "metrics": {
+        "-c": {
+          "seconds": 15.198924916000003,
+          "MB_per_second": 32.89706362544412,
+          "max_rss_bytes": 1785856
+        },
+        "-d": {
+          "seconds": 18.151631416999997,
+          "MB_per_second": 27.545733411693377,
+          "max_rss_bytes": 1736704
+        }
+      }
+    }
+  ]
+}

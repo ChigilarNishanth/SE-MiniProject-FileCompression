@@ -1,0 +1,19 @@
+{
+  "title": "SE Mini-Project Sprint Board",
+  "url": "https://github.com/users/ChigilarNishanth/projects/2",
+  "observed_date": "2026-10-27",
+  "source": "Authenticated browser view; linked from team repository Projects page",
+  "visibility": "private",
+  "items": [
+    {"issue": 1, "estimate": 2, "status": "Sprint 1 - Done"},
+    {"issue": 2, "estimate": 3, "status": "Sprint 1 - In Progress"},
+    {"issue": 3, "estimate": 5, "status": "Sprint 1 - In Progress"},
+    {"issue": 4, "estimate": 3, "status": "Sprint 1 - Done"},
+    {"issue": 5, "estimate": 2, "status": "Sprint 1 - In Progress"},
+    {"issue": 6, "estimate": 5, "status": "Backlog"},
+    {"issue": 7, "estimate": 5, "status": "Backlog"},
+    {"issue": 8, "estimate": 5, "status": "Backlog"},
+    {"issue": 9, "estimate": 2, "status": "Backlog"},
+    {"issue": 10, "estimate": 3, "status": "Backlog"}
+  ]
+}

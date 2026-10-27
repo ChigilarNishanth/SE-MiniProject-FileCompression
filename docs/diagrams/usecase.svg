@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="491.27559055118115" height="305" preserveAspectRatio="xMinYMin meet" viewBox="0 0 491 305" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="491.27559055118115" height="305"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-305)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="62" y="25" width="415" height="260" style="stroke: rgb(8%,18%,27%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="197.8675" y="267" style="font-family: Helvetica-Bold; font-size: 11px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,534) scale(1,-1)">czip file compression utility</text>
+			<circle cx="24" cy="196" r="7" style="stroke: rgb(8%,18%,27%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<path d="M 24,189 L 24,166 Z" style="stroke: rgb(8%,18%,27%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 12,179 L 36,179 Z" style="stroke: rgb(8%,18%,27%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 24,166 L 12,150 Z" style="stroke: rgb(8%,18%,27%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 24,166 L 36,150 Z" style="stroke: rgb(8%,18%,27%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="15.556" y="134" style="font-family: Helvetica; font-size: 8px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,268) scale(1,-1)">User</text>
+			<ellipse cx="170.0" cy="219.0" rx="82.0" ry="28.0" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; fill: rgb(92%,96%,96%); fill-rule: evenodd;"/>
+			<text x="156.9995" y="223" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,446) scale(1,-1)">UC-01</text>
+			<text x="142.496" y="209" style="font-family: Helvetica; font-size: 9px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,418) scale(1,-1)">Compress file</text>
+			<ellipse cx="170.0" cy="107.0" rx="82.0" ry="28.0" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; fill: rgb(92%,96%,96%); fill-rule: evenodd;"/>
+			<text x="156.9995" y="111" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,222) scale(1,-1)">UC-02</text>
+			<text x="137.744" y="97" style="font-family: Helvetica; font-size: 9px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,194) scale(1,-1)">Decompress file</text>
+			<ellipse cx="366.0" cy="219.0" rx="82.0" ry="28.0" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; fill: rgb(92%,96%,96%); fill-rule: evenodd;"/>
+			<text x="352.9995" y="223" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,446) scale(1,-1)">UC-03</text>
+			<text x="332.745" y="209" style="font-family: Helvetica; font-size: 9px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,418) scale(1,-1)">Display statistics</text>
+			<ellipse cx="366.0" cy="107.0" rx="82.0" ry="28.0" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; fill: rgb(92%,96%,96%); fill-rule: evenodd;"/>
+			<text x="352.9995" y="111" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,222) scale(1,-1)">UC-04</text>
+			<text x="332.736" y="97" style="font-family: Helvetica; font-size: 9px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,194) scale(1,-1)">Validate integrity</text>
+			<path d="M 36,180 L 88,219 Z" style="stroke: rgb(8%,18%,27%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 36,165 L 88,107 Z" style="stroke: rgb(8%,18%,27%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 252,219 L 284,219 Z" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 4, 3;"/>
+			<polygon points="284 219, 279.6121 221.3971, 279.6121 216.6029" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,50%); fill-rule: evenodd;"/>
+			<text x="245.984" y="255" style="font-family: Helvetica; font-size: 8px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,510) scale(1,-1)">&lt;&lt;include&gt;&gt;</text>
+			<path d="M 252,107 L 284,107 Z" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 4, 3;"/>
+			<polygon points="284 107, 279.6121 109.3971, 279.6121 104.6029" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,50%); fill-rule: evenodd;"/>
+			<text x="247.984" y="143" style="font-family: Helvetica; font-size: 8px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,286) scale(1,-1)">&lt;&lt;include&gt;&gt;</text>
+			<path d="M 226,129 L 310,196 Z" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 4, 3;"/>
+			<polygon points="310 196, 305.0749 195.1379, 308.0644 191.3899" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,50%); fill-rule: evenodd;"/>
+			<text x="284.984" y="158" style="font-family: Helvetica; font-size: 8px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,316) scale(1,-1)">&lt;&lt;include&gt;&gt;</text>
+			<text x="150.4475" y="8" style="font-family: Helvetica; font-size: 9px;fill: rgb(32%,39%,46%); stroke:none;" transform="translate(0,16) scale(1,-1)">Host filesystem supplies input, staging and final publication.</text>
+		</g>
+	</g>
+</svg>

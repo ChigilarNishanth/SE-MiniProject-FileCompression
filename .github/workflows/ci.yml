@@ -1,48 +1,28 @@
-name: C++ CI
-
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-
+name: Build and validate
+on: [push, pull_request, workflow_dispatch]
 permissions:
   contents: read
-
 jobs:
-  build-and-smoke-test:
-    runs-on: ubuntu-latest
-
+  requirements:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Install build tools
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y g++
-
-      - name: Build
-        run: |
-          g++ -std=c++17 -Wall -Wextra -Wpedantic -Iinclude \
-            src/main.cpp src/cli_parser.cpp src/archive_io.cpp \
-            -o czip
-
-      - name: Smoke test CLI
-        run: |
-          ./czip --help >/tmp/help.txt 2>&1
-          grep -q "Usage:" /tmp/help.txt
-
-      - name: Smoke test header write/read flow
-        run: |
-          printf "ABABA" > sample.txt
-          ./czip -c sample.txt sample.czip
-          ./czip -d sample.czip restored.txt
-
-      - name: Smoke test invalid archive detection
-        run: |
-          printf "NO" > fake.czip
-          if ./czip -d fake.czip out.txt; then
-            echo "Expected invalid archive detection to fail"
-            exit 1
-          fi
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+      - run: cmake --build build --config Release
+      - run: ctest --test-dir build -C Release --output-on-failure
+  sanitizers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: cmake -S . -B build -DCZIP_SANITIZE=ON -DCMAKE_BUILD_TYPE=Debug
+      - run: cmake --build build
+      - run: ctest --test-dir build --output-on-failure

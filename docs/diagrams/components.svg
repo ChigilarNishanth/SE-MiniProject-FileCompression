@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="491.27559055118115" height="315" preserveAspectRatio="xMinYMin meet" viewBox="0 0 491 315" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="491.27559055118115" height="315"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-315)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="145" y="244" width="200" height="60" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; fill: rgb(92%,96%,96%); fill-rule: evenodd;"/>
+			<text x="215.868" y="290" style="font-family: Helvetica; font-size: 8px;fill: rgb(32%,39%,46%); stroke:none;" transform="translate(0,580) scale(1,-1)">&lt;&lt;component&gt;&gt;</text>
+			<text x="212.495" y="274" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,548) scale(1,-1)">CLI controller</text>
+			<text x="203.428" y="256" style="font-family: Helvetica; font-size: 8px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,512) scale(1,-1)">main / usage / statistics</text>
+			<rect x="10" y="142" width="215" height="66" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; fill: rgb(92%,96%,96%); fill-rule: evenodd;"/>
+			<text x="88.368" y="194" style="font-family: Helvetica; font-size: 8px;fill: rgb(32%,39%,46%); stroke:none;" transform="translate(0,388) scale(1,-1)">&lt;&lt;component&gt;&gt;</text>
+			<text x="50.675" y="178" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,356) scale(1,-1)">Frequency + integrity model</text>
+			<text x="44.355999999999995" y="154" style="font-family: Helvetica; font-size: 8px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,308) scale(1,-1)">256 counters / CRC-32 / Tree / codebook</text>
+			<rect x="266" y="142" width="215" height="66" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; fill: rgb(92%,96%,96%); fill-rule: evenodd;"/>
+			<text x="344.368" y="194" style="font-family: Helvetica; font-size: 8px;fill: rgb(32%,39%,46%); stroke:none;" transform="translate(0,388) scale(1,-1)">&lt;&lt;component&gt;&gt;</text>
+			<text x="339.32" y="178" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,356) scale(1,-1)">Archive codec</text>
+			<text x="306.56399999999996" y="154" style="font-family: Helvetica; font-size: 8px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,308) scale(1,-1)">put / get / packed encode and decode</text>
+			<rect x="10" y="28" width="215" height="66" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; fill: rgb(92%,96%,96%); fill-rule: evenodd;"/>
+			<text x="88.368" y="80" style="font-family: Helvetica; font-size: 8px;fill: rgb(32%,39%,46%); stroke:none;" transform="translate(0,160) scale(1,-1)">&lt;&lt;component&gt;&gt;</text>
+			<text x="69.435" y="64" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,128) scale(1,-1)">Validation boundary</text>
+			<text x="51.464" y="40" style="font-family: Helvetica; font-size: 8px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,80) scale(1,-1)">header / cap / length / padding / CRC</text>
+			<rect x="266" y="28" width="215" height="66" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; fill: rgb(92%,96%,96%); fill-rule: evenodd;"/>
+			<text x="344.368" y="80" style="font-family: Helvetica; font-size: 8px;fill: rgb(32%,39%,46%); stroke:none;" transform="translate(0,160) scale(1,-1)">&lt;&lt;component&gt;&gt;</text>
+			<text x="319.315" y="64" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,128) scale(1,-1)">Filesystem transaction</text>
+			<text x="303.46" y="40" style="font-family: Helvetica; font-size: 8px;fill: rgb(8%,18%,27%); stroke:none;" transform="translate(0,80) scale(1,-1)">Output: stage / close / publish / cleanup</text>
+			<path d="M 206,244 L 118,208 Z" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="118 208, 122.9689 207.4428, 121.1536 211.8801" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,50%); fill-rule: evenodd;"/>
+			<path d="M 287,244 L 374,208 Z" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="374 208, 370.862 211.8927, 369.0289 207.4627" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,50%); fill-rule: evenodd;"/>
+			<path d="M 225,174 L 266,174 Z" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="266 174, 261.6121 176.3971, 261.6121 171.6029" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,50%); fill-rule: evenodd;"/>
+			<path d="M 118,142 L 118,94 Z" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="118 94, 120.3971 98.38791, 115.6029 98.38791" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,50%); fill-rule: evenodd;"/>
+			<path d="M 374,142 L 374,94 Z" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="374 94, 376.3971 98.38791, 371.6029 98.38791" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,50%); fill-rule: evenodd;"/>
+			<path d="M 225,61 L 266,61 Z" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="266 61, 261.6121 63.39713, 261.6121 58.60287" style="stroke: rgb(3%,49%,50%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,50%); fill-rule: evenodd;"/>
+			<text x="147.168" y="120" style="font-family: Helvetica; font-size: 8px;fill: rgb(32%,39%,46%); stroke:none;" transform="translate(0,240) scale(1,-1)">validated metadata and payload before final publication</text>
+		</g>
+	</g>
+</svg>

@@ -1,0 +1,26 @@
+test_01_text_round_trip (__main__.Requirements) ... ok
+test_02_all_byte_values (__main__.Requirements) ... ok
+test_03_empty (__main__.Requirements) ... ok
+test_04_single_symbol (__main__.Requirements) ... ok
+test_05_incompressible (__main__.Requirements) ... ok
+test_06_deterministic_tree_and_frequencies (__main__.Requirements) ... ok
+test_07_stats (__main__.Requirements) ... ok
+test_08_help_and_invalid_syntax (__main__.Requirements) ... ok
+test_09_missing_source (__main__.Requirements) ... ok
+test_10_no_clobber_and_input_alias (__main__.Requirements) ... ok
+test_11_bad_magic_version_flags_and_short_header (__main__.Requirements) ... ok
+test_12_frequency_and_bitcount_validation (__main__.Requirements) ... ok
+test_13_truncation_and_trailing_data (__main__.Requirements) ... ok
+test_14_checksum_and_payload_corruption (__main__.Requirements) ... ok
+test_15_padding_and_single_symbol_validation (__main__.Requirements) ... ok
+test_16_output_resource_limit (__main__.Requirements) ... ok
+test_17_default_names_and_spaces (__main__.Requirements) ... ok
+test_18_seeded_round_trip_property (__main__.Requirements) ... ok
+test_19_seeded_malformed_archives (__main__.Requirements) ... ok
+test_20_output_io_failure (__main__.Requirements) ... ok
+test_21_independent_golden_archive (__main__.Requirements) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 17.608s
+
+OK

@@ -1,0 +1,92 @@
+[
+  {
+    "number": 10,
+    "title": "US-10: SHA-256 Lossless Verification & Automated Test Suite",
+    "state": "open",
+    "assignees": [
+      "ChigilarNishanth"
+    ],
+    "url": "https://github.com/ChigilarNishanth/SE-MiniProject-FileCompression/issues/10"
+  },
+  {
+    "number": 9,
+    "title": "US-09: CLI Benchmark Output & Performance Statistics Display",
+    "state": "open",
+    "assignees": [
+      "InterstellarMC"
+    ],
+    "url": "https://github.com/ChigilarNishanth/SE-MiniProject-FileCompression/issues/9"
+  },
+  {
+    "number": 8,
+    "title": "US-08: Decompression Engine & Safe Bounds Tree Traversal",
+    "state": "open",
+    "assignees": [
+      "Mahesh33-mahi"
+    ],
+    "url": "https://github.com/ChigilarNishanth/SE-MiniProject-FileCompression/issues/8"
+  },
+  {
+    "number": 7,
+    "title": "US-07: End-to-End File Compression Engine Integration",
+    "state": "open",
+    "assignees": [
+      "ChigilarNishanth"
+    ],
+    "url": "https://github.com/ChigilarNishanth/SE-MiniProject-FileCompression/issues/7"
+  },
+  {
+    "number": 6,
+    "title": "US-06: Bitstream Buffer Packing & Bit-Shift File Writer",
+    "state": "open",
+    "assignees": [
+      "InterstellarMC"
+    ],
+    "url": "https://github.com/ChigilarNishanth/SE-MiniProject-FileCompression/issues/6"
+  },
+  {
+    "number": 5,
+    "title": "US-05: Automated C/C++ CI Build & Testing Workflow",
+    "state": "open",
+    "assignees": [
+      "Mahesh33-mahi"
+    ],
+    "url": "https://github.com/ChigilarNishanth/SE-MiniProject-FileCompression/issues/5"
+  },
+  {
+    "number": 4,
+    "title": "US-04: Archive Header Serialization & Magic Byte Validation (0x435A)",
+    "state": "closed",
+    "assignees": [
+      "ChigilarNishanth"
+    ],
+    "url": "https://github.com/ChigilarNishanth/SE-MiniProject-FileCompression/issues/4"
+  },
+  {
+    "number": 3,
+    "title": "US-03: Min-Heap Priority Queue & Huffman Tree Construction",
+    "state": "open",
+    "assignees": [
+      "InterstellarMC"
+    ],
+    "url": "https://github.com/ChigilarNishanth/SE-MiniProject-FileCompression/issues/3"
+  },
+  {
+    "number": 2,
+    "title": "US-02: File Stream I/O & 256-Byte Frequency Analyzer",
+    "state": "open",
+    "assignees": [
+      "Mahesh33-mahi"
+    ],
+    "url": "https://github.com/ChigilarNishanth/SE-MiniProject-FileCompression/issues/2"
+  },
+  {
+    "number": 1,
+    "title": "US-01: CLI Argument Parser & Help Navigation",
+    "state": "closed",
+    "assignees": [
+      "ChigilarNishanth"
+    ],
+    "url": "https://github.com/ChigilarNishanth/SE-MiniProject-FileCompression/issues/1"
+  }
+]

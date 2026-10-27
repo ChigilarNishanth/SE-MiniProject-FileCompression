@@ -1,0 +1,7 @@
+Test project /Users/manojkumarchaturvedi/Downloads/ctf_sep26/SE-MiniProject-FileCompression/build/cmake-sanitized
+    Start 1: requirements
+1/1 Test #1: requirements .....................   Passed   20.26 sec
+
+100% tests passed out of 1
+
+Total Test time (real) =  20.27 sec

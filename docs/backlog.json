@@ -1,0 +1,302 @@
+{
+  "project_title": "SE Mini-Project Sprint Board",
+  "project_url": "https://github.com/users/ChigilarNishanth/projects/2",
+  "repository": "ChigilarNishanth/SE-MiniProject-FileCompression",
+  "prepared_date": "2026-10-27",
+  "publication_status": "existing linked Project observed; local additions not yet published",
+  "sprints": [
+    {
+      "number": 1,
+      "start": "2026-10-19",
+      "end": "2026-10-23"
+    },
+    {
+      "number": 2,
+      "start": "2026-10-26",
+      "end": "2026-10-30"
+    }
+  ],
+  "stories": [
+    {
+      "id": "US-01",
+      "title": "US-01: CLI Argument Parser & Help Navigation",
+      "existing_issue": "https://github.com/ChigilarNishanth/SE-MiniProject-FileCompression/issues/1",
+      "story_points": 2,
+      "sprint": 1,
+      "assignee": "ChigilarNishanth",
+      "assignment_source": "existing upstream issue",
+      "requirements": [
+        "FR-08",
+        "NFR-04",
+        "NFR-05"
+      ],
+      "estimate_source": "existing private project Estimate field",
+      "observed_project_status": "Sprint 1 - Done",
+      "sprint_source": "existing Sprint-1 status",
+      "acceptance": "Help, syntax, default output names, and status codes verified.",
+      "evidence": "TC-08, TC-17",
+      "observed_github_state": "closed",
+      "local_state": "implemented; team review pending"
+    },
+    {
+      "id": "US-02",
+      "title": "US-02: File Stream I/O & 256-Byte Frequency Analyzer",
+      "existing_issue": "https://github.com/ChigilarNishanth/SE-MiniProject-FileCompression/issues/2",
+      "story_points": 3,
+      "sprint": 1,
+      "assignee": "Mahesh33-mahi",
+      "assignment_source": "existing upstream issue",
+      "requirements": [
+        "FR-03",
+        "NFR-02"
+      ],
+      "estimate_source": "existing private project Estimate field",
+      "observed_project_status": "Sprint 1 - In Progress",
+      "sprint_source": "existing Sprint-1 status",
+      "acceptance": "All byte values counted correctly; bounded buffers and RSS evidence.",
+      "evidence": "TC-02, TC-06, TC-22, TC-23",
+      "observed_github_state": "open",
+      "local_state": "implemented; team review pending"
+    },
+    {
+      "id": "US-03",
+      "title": "US-03: Min-Heap Priority Queue & Huffman Tree Construction",
+      "existing_issue": "https://github.com/ChigilarNishanth/SE-MiniProject-FileCompression/issues/3",
+      "story_points": 5,
+      "sprint": 1,
+      "assignee": "InterstellarMC",
+      "assignment_source": "existing upstream issue",
+      "requirements": [
+        "FR-04"
+      ],
+      "estimate_source": "existing private project Estimate field",
+      "observed_project_status": "Sprint 1 - In Progress",
+      "sprint_source": "existing Sprint-1 status",
+      "acceptance": "Stable frequency/minimum-symbol tie-break and independent golden archive.",
+      "evidence": "TC-06, TC-18, TC-21",
+      "observed_github_state": "open",
+      "local_state": "implemented; team review pending"
+    },
+    {
+      "id": "US-04",
+      "title": "US-04: Archive Header Serialization & Magic Byte Validation (0x435A)",
+      "existing_issue": "https://github.com/ChigilarNishanth/SE-MiniProject-FileCompression/issues/4",
+      "story_points": 3,
+      "sprint": 1,
+      "assignee": "ChigilarNishanth",
+      "assignment_source": "existing upstream issue",
+      "requirements": [
+        "FR-05",
+        "SEC-REQ-01"
+      ],
+      "estimate_source": "existing private project Estimate field",
+      "observed_project_status": "Sprint 1 - Done",
+      "sprint_source": "existing Sprint-1 status",
+      "acceptance": "Versioned portable header; invalid metadata rejected before allocation.",
+      "evidence": "TC-06, TC-11, TC-12",
+      "observed_github_state": "closed",
+      "local_state": "implemented; team review pending"
+    },
+    {
+      "id": "US-05",
+      "title": "US-05: Automated C/C++ CI Build & Testing Workflow",
+      "existing_issue": "https://github.com/ChigilarNishanth/SE-MiniProject-FileCompression/issues/5",
+      "story_points": 2,
+      "sprint": 1,
+      "assignee": "Mahesh33-mahi",
+      "assignment_source": "existing upstream issue",
+      "requirements": [
+        "NFR-03",
+        "NFR-05"
+      ],
+      "estimate_source": "existing private project Estimate field",
+      "observed_project_status": "Sprint 1 - In Progress",
+      "sprint_source": "existing Sprint-1 status",
+      "acceptance": "CMake builds/tests on push and PR; remote jobs must actually run.",
+      "evidence": "CI matrix",
+      "observed_github_state": "open",
+      "local_state": "configured; remote CI pending"
+    },
+    {
+      "id": "US-06",
+      "title": "US-06: Bitstream Buffer Packing & Bit-Shift File Writer",
+      "existing_issue": "https://github.com/ChigilarNishanth/SE-MiniProject-FileCompression/issues/6",
+      "story_points": 5,
+      "sprint": 2,
+      "assignee": "InterstellarMC",
+      "assignment_source": "existing upstream issue",
+      "requirements": [
+        "FR-06"
+      ],
+      "estimate_source": "existing private project Estimate field",
+      "observed_project_status": "Backlog",
+      "sprint_source": "proposed Sprint-2 allocation from Backlog",
+      "acceptance": "Known-code payload, one-symbol coding, and zero padding verified.",
+      "evidence": "TC-04, TC-15, TC-21",
+      "observed_github_state": "open",
+      "local_state": "implemented; team review pending"
+    },
+    {
+      "id": "US-07",
+      "title": "US-07: End-to-End File Compression Engine Integration",
+      "existing_issue": "https://github.com/ChigilarNishanth/SE-MiniProject-FileCompression/issues/7",
+      "story_points": 5,
+      "sprint": 2,
+      "assignee": "ChigilarNishanth",
+      "assignment_source": "existing upstream issue",
+      "requirements": [
+        "FR-01"
+      ],
+      "estimate_source": "existing private project Estimate field",
+      "observed_project_status": "Backlog",
+      "sprint_source": "proposed Sprint-2 allocation from Backlog",
+      "acceptance": "Complete stable two-pass compression, not a header-only scaffold.",
+      "evidence": "TC-01 through TC-07, TC-18",
+      "observed_github_state": "open",
+      "local_state": "implemented; team review pending"
+    },
+    {
+      "id": "US-08",
+      "title": "US-08: Decompression Engine & Safe Bounds Tree Traversal",
+      "existing_issue": "https://github.com/ChigilarNishanth/SE-MiniProject-FileCompression/issues/8",
+      "story_points": 5,
+      "sprint": 2,
+      "assignee": "Mahesh33-mahi",
+      "assignment_source": "existing upstream issue",
+      "requirements": [
+        "FR-02",
+        "SEC-REQ-02"
+      ],
+      "estimate_source": "existing private project Estimate field",
+      "observed_project_status": "Backlog",
+      "sprint_source": "proposed Sprint-2 allocation from Backlog",
+      "acceptance": "Safe decoding with frequency, size, length, padding and CRC validation.",
+      "evidence": "TC-01 through TC-05, TC-11 through TC-19",
+      "observed_github_state": "open",
+      "local_state": "implemented; team review pending"
+    },
+    {
+      "id": "US-09",
+      "title": "US-09: CLI Benchmark Output & Performance Statistics Display",
+      "existing_issue": "https://github.com/ChigilarNishanth/SE-MiniProject-FileCompression/issues/9",
+      "story_points": 2,
+      "sprint": 2,
+      "assignee": "InterstellarMC",
+      "assignment_source": "existing upstream issue",
+      "requirements": [
+        "FR-07",
+        "NFR-01"
+      ],
+      "estimate_source": "existing private project Estimate field",
+      "observed_project_status": "Backlog",
+      "sprint_source": "proposed Sprint-2 allocation from Backlog",
+      "acceptance": "Actual original/archive/savings/time metrics; benchmark evidence attached.",
+      "evidence": "TC-07, TC-22",
+      "observed_github_state": "open",
+      "local_state": "implemented; team review pending"
+    },
+    {
+      "id": "US-10",
+      "title": "US-10: SHA-256 Lossless Verification & Automated Test Suite",
+      "existing_issue": "https://github.com/ChigilarNishanth/SE-MiniProject-FileCompression/issues/10",
+      "story_points": 3,
+      "sprint": 2,
+      "assignee": "ChigilarNishanth",
+      "assignment_source": "existing upstream issue",
+      "requirements": [
+        "NFR-03",
+        "SEC-REQ-02"
+      ],
+      "estimate_source": "existing private project Estimate field",
+      "observed_project_status": "Backlog",
+      "sprint_source": "proposed Sprint-2 allocation from Backlog",
+      "acceptance": "21 requirement tests, seeded cases, independent golden oracle and sanitizers.",
+      "evidence": "TC-01 through TC-21",
+      "observed_github_state": "open",
+      "local_state": "implemented; team review pending"
+    },
+    {
+      "id": "US-11",
+      "title": "US-11: Streaming performance and memory acceptance",
+      "existing_issue": null,
+      "story_points": 3,
+      "sprint": 2,
+      "assignee": "InterstellarMC",
+      "assignment_source": "proposed; team confirmation pending",
+      "requirements": [
+        "NFR-01",
+        "NFR-02"
+      ],
+      "acceptance": "Record 500 MB text/binary speed and RSS; validate x86-64 reference target separately.",
+      "evidence": "TC-22, TC-23; benchmark_results.json",
+      "observed_github_state": "not created",
+      "local_state": "prepared; acceptance/review pending"
+    },
+    {
+      "id": "US-12",
+      "title": "US-12: Output preservation and decompression resource limits",
+      "existing_issue": null,
+      "story_points": 3,
+      "sprint": 2,
+      "assignee": "Mahesh33-mahi",
+      "assignment_source": "proposed; team confirmation pending",
+      "requirements": [
+        "SEC-REQ-03",
+        "NFR-04"
+      ],
+      "acceptance": "Never overwrite an existing file; cleanup handled failures; reject output beyond cap.",
+      "evidence": "TC-10, TC-16, TC-20",
+      "observed_github_state": "not created",
+      "local_state": "prepared; acceptance/review pending"
+    },
+    {
+      "id": "US-13",
+      "title": "US-13: Complete SRS, test plan, design and change log",
+      "existing_issue": null,
+      "story_points": 3,
+      "sprint": 2,
+      "assignee": "ChigilarNishanth",
+      "assignment_source": "proposed; team confirmation pending",
+      "requirements": [
+        "FR-01 through FR-08",
+        "NFR-01 through NFR-05"
+      ],
+      "acceptance": "Include UML use case, component view, two sequence diagrams, APIs, security, cases and traceability.",
+      "evidence": "docs and submission PDF",
+      "observed_github_state": "not created",
+      "local_state": "prepared; acceptance/review pending"
+    },
+    {
+      "id": "US-14",
+      "title": "US-14: Demonstration evidence and contributor review",
+      "existing_issue": null,
+      "story_points": 3,
+      "sprint": 2,
+      "assignee": "InterstellarMC",
+      "assignment_source": "proposed; team confirmation pending",
+      "requirements": [
+        "Part-2 demonstration and review process"
+      ],
+      "acceptance": "Current working-product demos: 60 and 120 seconds. Actual member-authored PR and owner review remain human evidence.",
+      "evidence": "demos; PR and review evidence pending",
+      "observed_github_state": "not created",
+      "local_state": "prepared; acceptance/review pending"
+    },
+    {
+      "id": "US-15",
+      "title": "US-15: Final review and development freeze",
+      "existing_issue": null,
+      "story_points": 2,
+      "sprint": 2,
+      "assignee": "ChigilarNishanth",
+      "assignment_source": "proposed; team confirmation pending",
+      "requirements": [
+        "Part-2 final documentation and freeze"
+      ],
+      "acceptance": "Confirm deviations, CI, unresolved reference-host check, real review, then freeze an approved commit. No backdated closure.",
+      "evidence": "docs/Submission_Checklist.md",
+      "observed_github_state": "not created",
+      "local_state": "prepared; acceptance/review pending"
+    }
+  ]
+}
