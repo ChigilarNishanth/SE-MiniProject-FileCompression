@@ -33,6 +33,13 @@ jobs:
           ./czip --help >/tmp/help.txt 2>&1
           grep -q "Usage:" /tmp/help.txt
 
+      - name: Test US-03 Huffman tree and code generation
+        run: |
+          g++ -std=c++17 -Wall -Wextra -Wpedantic -Werror -Iinclude \
+            src/huffman_tree.cpp tests/huffman_tree_tests.cpp \
+            -o /tmp/huffman_tree_tests
+          /tmp/huffman_tree_tests
+
       - name: Smoke test header write/read flow
         run: |
           printf "ABABA" > sample.txt
