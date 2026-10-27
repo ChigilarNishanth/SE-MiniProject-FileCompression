@@ -125,6 +125,7 @@ for name,drawing in drawings.items():
 styles=getSampleStyleSheet()
 styles.add(ParagraphStyle('BodyCustom',fontName='Helvetica',fontSize=10,leading=14,
                           textColor=INK,spaceAfter=8,splitLongWords=True))
+styles.add(ParagraphStyle('CompactBody',parent=styles['BodyCustom'],fontSize=9.5,leading=12.5,spaceAfter=6))
 styles.add(ParagraphStyle('CellCustom',fontName='Helvetica',fontSize=8.1,leading=10.8,textColor=INK,splitLongWords=True))
 styles.add(ParagraphStyle('CellHeadCustom',parent=styles['CellCustom'],textColor=colors.white,fontName='Helvetica-Bold'))
 styles.add(ParagraphStyle('TitleCustom',fontName='Helvetica-Bold',fontSize=28,leading=34,textColor=INK,spaceAfter=18))
@@ -146,6 +147,9 @@ def markdown_flowables(source):
     if source.name=='Backlog_Sprints.md':
         content=content.split('## Acceptance details')[0] + '\n\n## Acceptance records\nPer-story acceptance criteria, existing issue links, observed states and proposed ownership are included in docs/backlog.json and the full Markdown sprint plan. The plan does not close existing upstream issues.\n'
     lines=content.splitlines()
+    compact=source.name in ('Test_Report.md','Submission_Checklist.md')
+    body_style=styles['CompactBody' if compact else 'BodyCustom']
+    table_padding=5 if compact else 7
     result=[]; i=0
     while i<len(lines):
         line=lines[i].strip()
@@ -178,7 +182,7 @@ def markdown_flowables(source):
             table=Table(cells,colWidths=widths,repeatRows=1,hAlign='LEFT')
             table.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,0),INK),('VALIGN',(0,0),(-1,-1),'TOP'),
                                        ('LEFTPADDING',(0,0),(-1,-1),7),('RIGHTPADDING',(0,0),(-1,-1),7),
-                                       ('TOPPADDING',(0,0),(-1,-1),7),('BOTTOMPADDING',(0,0),(-1,-1),7),
+                                       ('TOPPADDING',(0,0),(-1,-1),table_padding),('BOTTOMPADDING',(0,0),(-1,-1),table_padding),
                                        ('ROWBACKGROUNDS',(0,1),(-1,-1),[colors.white,PALE]),
                                        ('LINEBELOW',(0,0),(-1,0),.5,TEAL),
                                        ('LINEBELOW',(0,1),(-1,-1),.25,colors.HexColor('#dbe5ec'))]))
@@ -194,12 +198,12 @@ def markdown_flowables(source):
         elif line.startswith('# '):
             result.append(Paragraph(markup(line[2:]),styles['H1Custom']))
         elif re.match(r'^\d+\. ',line):
-            result.append(Paragraph(markup(line),styles['BodyCustom']))
+            result.append(Paragraph(markup(line),body_style))
         else:
             paragraph=[line]
             while i+1<len(lines) and lines[i+1].strip() and not lines[i+1].strip().startswith(('#','|','![')) and not re.match(r'^\d+\. ',lines[i+1].strip()):
                 i+=1; paragraph.append(lines[i].strip())
-            result.append(Paragraph(markup(' '.join(paragraph)),styles['BodyCustom']))
+            result.append(Paragraph(markup(' '.join(paragraph)),body_style))
         i+=1
     return result
 
@@ -213,9 +217,9 @@ team_table=Table([[Paragraph(c,styles['CellHeadCustom' if r==0 else 'BodyCustom'
 team_table.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,0),INK),('ROWBACKGROUNDS',(0,1),(-1,-1),[PALE,colors.white]),
                                 ('VALIGN',(0,0),(-1,-1),'TOP'),('TOPPADDING',(0,0),(-1,-1),10),('BOTTOMPADDING',(0,0),(-1,-1),9)]))
 story += [team_table,Spacer(1,28),Paragraph('Prepared 27 October 2026 | Revision 2.0',styles['CoverSmall']),
-          Paragraph('Review candidate: local implementation and measured evidence are complete. GitHub publication, '
-                    'remote CI, team review, and release freeze are separate pending steps. '
-                    'Current demonstrations do not establish historical Sprint-1 recording dates.',styles['BodyCustom']),PageBreak(),
+          Paragraph('Published review candidate: draft PR #13 is linked to the existing sprint board. Linux, macOS, '
+                    'Windows and sanitizer CI jobs passed for code commit fc2db01. Team review and release freeze '
+                    'remain pending. Current demonstrations do not establish historical Sprint-1 recording dates.',styles['BodyCustom']),PageBreak(),
           Paragraph('Package guide',styles['H1Custom'])]
 sections=[('1','Software requirements specification','SRS_v2.md'),('2','Software test plan and cases','Test_Plan.md'),
           ('3','Architecture and design','Architecture_Design.md'),('4','Backlog and two-sprint plan','Backlog_Sprints.md'),

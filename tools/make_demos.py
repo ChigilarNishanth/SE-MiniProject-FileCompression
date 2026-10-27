@@ -122,9 +122,9 @@ sprint2 = [
     ('Documentation and release review',
      ['Prepared: SRS, test plan, component + sequence diagrams,',
       'API design, security analysis, backlog, sprint plan, deviations.', '',
-      'Pending: GitHub publication and actual remote CI results,',
-      'team member PR/reviewer evidence, reference-host check,',
-      'and an approved frozen release commit.', '',
+      'Published: draft PR #13, linked to the existing sprint board.',
+      'Remote CI: Linux, macOS, Windows and sanitizers passed.',
+      'Pending: owner review, reference-host check and release freeze.', '',
       'No historical sprint completion or approval is invented.'],
      'Current working-product demonstration. Prepared 27 October 2026.'),
 ]

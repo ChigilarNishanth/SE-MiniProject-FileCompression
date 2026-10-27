@@ -3,7 +3,8 @@
   "project_url": "https://github.com/users/ChigilarNishanth/projects/2",
   "repository": "ChigilarNishanth/SE-MiniProject-FileCompression",
   "prepared_date": "2026-10-27",
-  "publication_status": "existing linked Project observed; local additions not yet published",
+  "publication_status": "draft PR linked to existing Project; extra tasks remain proposals",
+  "pull_request": "https://github.com/ChigilarNishanth/SE-MiniProject-FileCompression/pull/13",
   "sprints": [
     {
       "number": 1,
@@ -115,7 +116,7 @@
       "acceptance": "CMake builds/tests on push and PR; remote jobs must actually run.",
       "evidence": "CI matrix",
       "observed_github_state": "open",
-      "local_state": "configured; remote CI pending"
+      "local_state": "remote Linux/macOS/Windows and sanitizer jobs passed; owner review pending"
     },
     {
       "id": "US-06",

@@ -58,7 +58,7 @@ Ownership: existing upstream issue. GitHub state observed: closed. Current local
 
 ### US-05
 CMake builds/tests on push and PR; remote jobs must actually run.
-Ownership: existing upstream issue. GitHub state observed: open. Current local state: configured; remote CI pending.
+Ownership: existing upstream issue. GitHub state observed: open. Current local state: remote Linux/macOS/Windows and sanitizer jobs passed; owner review pending.
 
 ### US-06
 Known-code payload, one-symbol coding, and zero padding verified.

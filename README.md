@@ -43,7 +43,7 @@ Archives contain literal `CZ` bytes, version/flags, explicit little-endian metad
 
 ## Verification
 
-21 CLI cases cover round trips, all byte values, empty/single-symbol files, deterministic encoding, an independent golden archive, syntax, corruption, limits, and preservation of existing files. The suite also includes 25 seeded round trips and 40 seeded archive mutations. Local Release and ASan/UBSan logs are under `docs/`. GitHub Actions configures macOS, Linux and Windows builds plus a Linux sanitizer job; a configured job is not a recorded remote pass.
+21 CLI cases cover round trips, all byte values, empty/single-symbol files, deterministic encoding, an independent golden archive, syntax, corruption, limits, and preservation of existing files. The suite also includes 25 seeded round trips and 40 seeded archive mutations. Local Release and ASan/UBSan logs are under `docs/`. [GitHub Actions run 40556449207](https://github.com/ChigilarNishanth/SE-MiniProject-FileCompression/actions/runs/40556449207) passed macOS, Linux and Windows builds/tests plus Linux sanitizers for code commit `fc2db01`.
 
 ```sh
 cmake -S . -B build/sanitize -DCZIP_SANITIZE=ON -DCMAKE_BUILD_TYPE=Debug
@@ -63,7 +63,9 @@ Measured locally on ARM64 macOS with 500 MB fixtures: about **48 MB/s text** and
 - [Current-product demos and transcripts](demos/README.md)
 - [Original submitted baseline](docs/SRS_Deliverable1.md) and [original PDF](docs/SRS_Deliverable1.pdf)
 
-The implementation branch incorporates upstream `dc36070` and replaces its sample-frequency/header-only scaffold with complete compression/decompression. Original team history remains intact. This package does not claim a historical Sprint-1 recording, participant-authored PRs, reviewer approval, or a completed release freeze. Existing upstream issues are referenced rather than duplicated in the fork.
+The implementation branch incorporates upstream `dc36070` and replaces its sample-frequency/header-only scaffold with complete compression/decompression. Original team history remains intact. This package does not claim a historical Sprint-1 recording, PRs authored by other teammates, reviewer approval, or a completed release freeze. Existing upstream issues are referenced rather than duplicated in the fork.
+
+[Draft PR #13](https://github.com/ChigilarNishanth/SE-MiniProject-FileCompression/pull/13) contains the published review candidate and is linked to the existing sprint board as Sprint 2 - In Progress. Owner acceptance remains pending; extra delivery tasks are proposed in the package rather than silently changing existing issue states.
 
 ## Rebuild documents and media
 

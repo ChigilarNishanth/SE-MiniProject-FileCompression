@@ -21,3 +21,8 @@ The binary fixture is a deterministic one-megabyte random block repeated 500 tim
 
 ## Reproduction
 Build Release, run python3 tests/test_czip.py build/czip, then python3 tools/benchmark.py build/czip 500. For sanitizers, use CMake -DCZIP_SANITIZE=ON or the equivalent compiler flags. Allow roughly 1.5 GB of temporary free disk space for the binary source, archive and restored file.
+
+## Remote CI and publication
+Draft PR #13 is published and linked to the existing sprint board as Sprint 2 - In Progress. GitHub Actions run 40556449207 passed all four jobs (Linux, macOS, Windows, Linux sanitizers) for code commit fc2db01268a62ec9518eee7499326f28304f7a17. See remote_validation.json for exact URLs. The initial MSVC warning about mixed bool/integer bit operations was corrected with explicit unsigned conversions. The actions now use verified Node-24 releases checkout v7.0.1 and setup-python v7.1.0.
+
+A follow-up 500 MB run of the corrected CMake Release build also restored both fixtures exactly: 37.62 MB/s text compression and 29.17 MB/s binary compression, with peak RSS below 2 MB. This CMake build uses its Release optimization defaults and ran while demonstration media were being rendered; it is additional correctness/resource evidence, not a controlled comparison against the original -O2 measurements. Raw follow-up data are in benchmark_followup_results.json.

@@ -1,0 +1,17 @@
+{
+  "pull_request": "https://github.com/ChigilarNishanth/SE-MiniProject-FileCompression/pull/13",
+  "draft": true,
+  "project": "https://github.com/users/ChigilarNishanth/projects/2",
+  "project_status": "Sprint 2 - In Progress",
+  "validated_code_commit": "fc2db01268a62ec9518eee7499326f28304f7a17",
+  "run_id": 40556449207,
+  "run_url": "https://github.com/ChigilarNishanth/SE-MiniProject-FileCompression/actions/runs/40556449207",
+  "conclusion": "success",
+  "jobs": [
+    {"id": 122373671150, "name": "sanitizers", "conclusion": "success"},
+    {"id": 122373671556, "name": "requirements (ubuntu-latest)", "conclusion": "success"},
+    {"id": 122373671587, "name": "requirements (macos-latest)", "conclusion": "success"},
+    {"id": 122373671851, "name": "requirements (windows-latest)", "conclusion": "success"}
+  ],
+  "observed_date": "2026-10-27"
+}

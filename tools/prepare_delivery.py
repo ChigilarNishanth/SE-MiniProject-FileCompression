@@ -22,6 +22,8 @@ snapshot = [{'number': i['number'], 'title': i['title'], 'state': i['state'],
 (DOCS / 'upstream_issue_snapshot.json').write_text(json.dumps(snapshot, indent=2) + '\n')
 board=json.loads((DOCS/'project_snapshot.json').read_text())
 board_items={item['issue']:item for item in board['items']}
+remote_path=DOCS/'remote_validation.json'
+remote=json.loads(remote_path.read_text()) if remote_path.exists() else None
 mapping = {
     1: (2, 1, ['FR-08', 'NFR-04', 'NFR-05'], 'TC-08, TC-17', 'Help, syntax, default output names, and status codes verified.'),
     2: (3, 1, ['FR-03', 'NFR-02'], 'TC-02, TC-06, TC-22, TC-23', 'All byte values counted correctly; bounded buffers and RSS evidence.'),
@@ -49,7 +51,9 @@ for issue in sorted(snapshot, key=lambda i: i['number']):
                     'observed_project_status': board_items[number]['status'],
                     'sprint_source': 'existing Sprint-1 status' if number<=5 else 'proposed Sprint-2 allocation from Backlog',
                     'acceptance': acceptance, 'evidence': tests, 'observed_github_state': issue['state'],
-                    'local_state': 'implemented; team review pending' if number != 5 else 'configured; remote CI pending'})
+                    'local_state': ('implemented; team review pending' if number != 5 else
+                                    'remote Linux/macOS/Windows and sanitizer jobs passed; owner review pending' if remote else
+                                    'configured; remote CI pending')})
 extras = [
     ('US-11', 'Streaming performance and memory acceptance', 3, 'InterstellarMC', ['NFR-01', 'NFR-02'],
      'TC-22, TC-23; benchmark_results.json', 'Record 500 MB text/binary speed and RSS; validate x86-64 reference target separately.'),
@@ -68,7 +72,8 @@ for sid, title, points, assignee, requirements, evidence, acceptance in extras:
                     'requirements': requirements, 'acceptance': acceptance, 'evidence': evidence,
                     'observed_github_state': 'not created', 'local_state': 'prepared; acceptance/review pending'})
 manifest = {'project_title': board['title'], 'project_url': board['url'], 'repository': UPSTREAM,
-            'prepared_date': '2026-10-27', 'publication_status': 'existing linked Project observed; local additions not yet published',
+            'prepared_date': '2026-10-27', 'publication_status': 'draft PR linked to existing Project; extra tasks remain proposals' if remote else 'existing linked Project observed; local additions not yet published',
+            'pull_request': remote['pull_request'] if remote else None,
             'sprints': [{'number': 1, 'start': '2026-10-19', 'end': '2026-10-23'},
                         {'number': 2, 'start': '2026-10-26', 'end': '2026-10-30'}], 'stories': stories}
 (DOCS / 'backlog.json').write_text(json.dumps(manifest, indent=2) + '\n')
@@ -134,14 +139,16 @@ lines += ['', '## Interpretation and unresolved evidence',
           'For sanitizers, use CMake -DCZIP_SANITIZE=ON or the equivalent compiler flags. '
           'Allow roughly 1.5 GB of temporary free disk space for the binary source, archive and restored file.']
 (DOCS / 'Test_Report.md').write_text('\n'.join(lines) + '\n')
-
-# Keep the case numbering aligned with the added independent golden oracle.
-plan_path = DOCS / 'Test_Plan.md'
-plan = plan_path.read_text().replace('TC-22', 'TC-23').replace('TC-21', 'TC-22')
-plan = plan.replace('20 automated', '21 automated').replace('All 20 automated', 'All 21 automated')
-plan = plan.replace('TC-01 through TC-22', 'TC-01 through TC-21')
-needle = '| TC-22 | Release build;'
-plan = plan.replace(needle, '| TC-21 | Independently construct AAABBC header and known payload 1F 00; compare encoder and decode oracle | Exact archive bytes and restored content match independent specification |\n' + needle)
-# Idempotent reruns: the source plan is already numbered after the first run.
-if 'TC-24' not in plan and '| TC-21 | Independently construct' not in plan_path.read_text():
-    plan_path.write_text(plan)
+if remote:
+    with (DOCS/'Test_Report.md').open('a') as report:
+        report.write('\n## Remote CI and publication\n')
+        report.write('Draft PR #13 is published and linked to the existing sprint board as Sprint 2 - In Progress. '
+                     'GitHub Actions run 40556449207 passed all four jobs (Linux, macOS, Windows, Linux sanitizers) '
+                     'for code commit fc2db01268a62ec9518eee7499326f28304f7a17. See remote_validation.json for exact URLs. '
+                     'The initial MSVC warning about mixed bool/integer bit operations was corrected with explicit unsigned conversions. '
+                     'The actions now use verified Node-24 releases checkout v7.0.1 and setup-python v7.1.0.\n')
+        report.write('\nA follow-up 500 MB run of the corrected CMake Release build also restored both fixtures exactly: '
+                     '37.62 MB/s text compression and 29.17 MB/s binary compression, with peak RSS below 2 MB. '
+                     'This CMake build uses its Release optimization defaults and ran while demonstration media were being rendered; '
+                     'it is additional correctness/resource evidence, not a controlled comparison against the original -O2 measurements. '
+                     'Raw follow-up data are in benchmark_followup_results.json.\n')

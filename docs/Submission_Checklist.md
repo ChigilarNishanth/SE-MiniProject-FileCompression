@@ -23,11 +23,11 @@ Prepared 27 October 2026. This is a review candidate, not a declaration that the
 | Points and team assignment | Existing assignees and Estimate values preserved; proposed additional tasks and Sprint-2 allocations need review |
 | Two sprints planned | Backlog_Sprints.md uses original 19-23 and 26-30 October dates without backdating completion |
 | Working product | Complete C++17 compressor/decoder; local tests and benchmark logs |
-| GitHub Actions | Workflow source prepared; actual remote result pending publication |
-| Assigned member raises PR; owner reviews | Human participation required; generated changes do not establish this evidence |
+| GitHub Actions | Run 40556449207 passed Linux/macOS/Windows Release and Linux sanitizers for code commit fc2db01 |
+| Assigned member raises PR; owner reviews | PR #13 is authored by InterstellarMC; other teammates' acceptance and owner review remain pending |
 | One-minute Sprint-1 outcome video | 60-second current-product demonstration supplied; historical Sprint-1 recording not available |
 | Two-minute Sprint-2 outcome video | 120-second current-product demonstration supplied |
-| Upload videos to repo | Local files prepared; remote publication pending |
+| Upload videos to repo | Both demonstration videos published on the contribution branch in draft PR #13 |
 | Document deviations | Deviations.md with explicit review impacts |
 | Complete docs and freeze | Review package prepared; team acceptance and final frozen commit pending |
 
@@ -39,3 +39,6 @@ Prepared 27 October 2026. This is a review candidate, not a declaration that the
 5. Record/confirm the evaluator's acceptance of a current demonstration in place of missing historical Sprint-1 evidence. Historical evidence cannot be manufactured.
 6. Validate the x86-64 throughput target or record an approved environment deviation; distinguish process RSS from heap profiling.
 7. After owner review and all required acceptance, freeze the approved commit and tag the release. No approval or tag is asserted by this package.
+
+## Published review candidate
+Draft PR: https://github.com/ChigilarNishanth/SE-MiniProject-FileCompression/pull/13. It is linked to the existing private board as Sprint 2 - In Progress. Existing issue assignments, estimates and completion states are preserved; additional tasks remain proposals in the review package. No team owner approval or merge has been performed.

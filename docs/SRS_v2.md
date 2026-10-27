@@ -15,7 +15,7 @@ References: supplied Software Engineering Mini-Project Deliverables Part-1 and P
 
 ## 2. Overall description
 ### 2.1 Product perspective and operating environment
-A local CLI invoked by a user or automated test runner. Requires a C++17 compiler and filesystem supporting sibling temporary directories and hard links. CMake provides a portable build; a direct compiler command is also supported. macOS/Apple Clang is locally validated. Linux/GCC and Windows/MSVC are configured in CI and require an actual remote run before their status can be called verified.
+A local CLI invoked by a user or automated test runner. Requires a C++17 compiler and filesystem supporting sibling temporary directories and hard links. CMake provides a portable build; a direct compiler command is also supported. macOS/Apple Clang is locally validated. Release build/test jobs on Linux, macOS and Windows, plus Linux sanitizers, passed in remote CI for code commit fc2db01; exact run evidence is in remote_validation.json.
 ### 2.2 Users and assumptions
 Users can run terminal commands and choose input/output paths. Source data must remain stable during compression. Output directories must exist and be writable. The tool rejects non-regular input files. Existing destinations are never overwritten, including the original input path. There is no authentication system because the tool inherits the invoking user's filesystem permissions.
 ### 2.3 Constraints and dependencies

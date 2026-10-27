@@ -2,7 +2,7 @@
   "prepared_date": "2026-10-27",
   "kind": "current-product terminal replay",
   "not_historical_sprint_recording": true,
-  "source_sha256": "b1652f67b7124f8d7c9a50bdcbaca4e533d6c1b98963c82b918839a712f8d507",
+  "source_sha256": "f025a78296d889834966d91b4837cb4d7b2dbb4ec5b8bcf7213ba17ebe7c7e1a",
   "captures": [
     {
       "command": [
@@ -20,7 +20,7 @@
     },
     {
       "command": [
-        "/var/folders/h8/w2ktlbyx5kl6jn_0hmrjz7wc0000gn/T/tmp7lcg2nw8/czip",
+        "/var/folders/h8/w2ktlbyx5kl6jn_0hmrjz7wc0000gn/T/tmpd3wpji9r/czip",
         "--help"
       ],
       "display": "./czip --help",
@@ -30,26 +30,26 @@
     },
     {
       "command": [
-        "/var/folders/h8/w2ktlbyx5kl6jn_0hmrjz7wc0000gn/T/tmp7lcg2nw8/czip",
+        "/var/folders/h8/w2ktlbyx5kl6jn_0hmrjz7wc0000gn/T/tmpd3wpji9r/czip",
         "-c",
         "sample.txt",
         "sample.czip"
       ],
       "display": "./czip -c sample.txt sample.czip",
       "exit_code": 0,
-      "stdout": "Original size: 120000 bytes\nArchive size: 71447 bytes\nSavings: 40.46%\nExecution time: 3.61 ms\nOutput: sample.czip\n",
+      "stdout": "Original size: 120000 bytes\nArchive size: 71447 bytes\nSavings: 40.46%\nExecution time: 3.45 ms\nOutput: sample.czip\n",
       "stderr": ""
     },
     {
       "command": [
-        "/var/folders/h8/w2ktlbyx5kl6jn_0hmrjz7wc0000gn/T/tmp7lcg2nw8/czip",
+        "/var/folders/h8/w2ktlbyx5kl6jn_0hmrjz7wc0000gn/T/tmpd3wpji9r/czip",
         "-d",
         "sample.czip",
         "restored.txt"
       ],
       "display": "./czip -d sample.czip restored.txt",
       "exit_code": 0,
-      "stdout": "Original size: 120000 bytes\nArchive size: 71447 bytes\nSavings: 40.46%\nExecution time: 4.55 ms\nOutput: restored.txt\n",
+      "stdout": "Original size: 120000 bytes\nArchive size: 71447 bytes\nSavings: 40.46%\nExecution time: 4.47 ms\nOutput: restored.txt\n",
       "stderr": ""
     },
     {
@@ -65,26 +65,26 @@
     },
     {
       "command": [
-        "/var/folders/h8/w2ktlbyx5kl6jn_0hmrjz7wc0000gn/T/tmp7lcg2nw8/czip",
+        "/var/folders/h8/w2ktlbyx5kl6jn_0hmrjz7wc0000gn/T/tmpd3wpji9r/czip",
         "-c",
         "binary.bin",
         "binary.czip"
       ],
       "display": "./czip -c binary.bin binary.czip",
       "exit_code": 0,
-      "stdout": "Original size: 1048576 bytes\nArchive size: 1050648 bytes\nSavings: -0.20%\nExecution time: 30.35 ms\nOutput: binary.czip\n",
+      "stdout": "Original size: 1048576 bytes\nArchive size: 1050648 bytes\nSavings: -0.20%\nExecution time: 26.80 ms\nOutput: binary.czip\n",
       "stderr": ""
     },
     {
       "command": [
-        "/var/folders/h8/w2ktlbyx5kl6jn_0hmrjz7wc0000gn/T/tmp7lcg2nw8/czip",
+        "/var/folders/h8/w2ktlbyx5kl6jn_0hmrjz7wc0000gn/T/tmpd3wpji9r/czip",
         "-d",
         "binary.czip",
         "binary-restored.bin"
       ],
       "display": "./czip -d binary.czip binary-restored.bin",
       "exit_code": 0,
-      "stdout": "Original size: 1048576 bytes\nArchive size: 1050648 bytes\nSavings: -0.20%\nExecution time: 42.64 ms\nOutput: binary-restored.bin\n",
+      "stdout": "Original size: 1048576 bytes\nArchive size: 1050648 bytes\nSavings: -0.20%\nExecution time: 34.15 ms\nOutput: binary-restored.bin\n",
       "stderr": ""
     },
     {
@@ -100,7 +100,7 @@
     },
     {
       "command": [
-        "/var/folders/h8/w2ktlbyx5kl6jn_0hmrjz7wc0000gn/T/tmp7lcg2nw8/czip",
+        "/var/folders/h8/w2ktlbyx5kl6jn_0hmrjz7wc0000gn/T/tmpd3wpji9r/czip",
         "-d",
         "corrupt.czip",
         "rejected.txt"
@@ -112,7 +112,7 @@
     },
     {
       "command": [
-        "/var/folders/h8/w2ktlbyx5kl6jn_0hmrjz7wc0000gn/T/tmp7lcg2nw8/czip",
+        "/var/folders/h8/w2ktlbyx5kl6jn_0hmrjz7wc0000gn/T/tmpd3wpji9r/czip",
         "-d",
         "sample.czip",
         "restored.txt"
@@ -124,7 +124,7 @@
     },
     {
       "command": [
-        "/var/folders/h8/w2ktlbyx5kl6jn_0hmrjz7wc0000gn/T/tmp7lcg2nw8/czip",
+        "/var/folders/h8/w2ktlbyx5kl6jn_0hmrjz7wc0000gn/T/tmpd3wpji9r/czip",
         "-d",
         "sample.czip",
         "limited.txt",
@@ -140,12 +140,12 @@
       "command": [
         "/Users/manojkumarchaturvedi/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
         "/Users/manojkumarchaturvedi/Downloads/ctf_sep26/SE-MiniProject-FileCompression/tests/test_czip.py",
-        "/var/folders/h8/w2ktlbyx5kl6jn_0hmrjz7wc0000gn/T/tmp7lcg2nw8/czip"
+        "/var/folders/h8/w2ktlbyx5kl6jn_0hmrjz7wc0000gn/T/tmpd3wpji9r/czip"
       ],
       "display": "python3 tests/test_czip.py ./czip",
       "exit_code": 0,
       "stdout": "",
-      "stderr": "test_01_text_round_trip (__main__.Requirements.test_01_text_round_trip) ... ok\ntest_02_all_byte_values (__main__.Requirements.test_02_all_byte_values) ... ok\ntest_03_empty (__main__.Requirements.test_03_empty) ... ok\ntest_04_single_symbol (__main__.Requirements.test_04_single_symbol) ... ok\ntest_05_incompressible (__main__.Requirements.test_05_incompressible) ... ok\ntest_06_deterministic_tree_and_frequencies (__main__.Requirements.test_06_deterministic_tree_and_frequencies) ... ok\ntest_07_stats (__main__.Requirements.test_07_stats) ... ok\ntest_08_help_and_invalid_syntax (__main__.Requirements.test_08_help_and_invalid_syntax) ... ok\ntest_09_missing_source (__main__.Requirements.test_09_missing_source) ... ok\ntest_10_no_clobber_and_input_alias (__main__.Requirements.test_10_no_clobber_and_input_alias) ... ok\ntest_11_bad_magic_version_flags_and_short_header (__main__.Requirements.test_11_bad_magic_version_flags_and_short_header) ... ok\ntest_12_frequency_and_bitcount_validation (__main__.Requirements.test_12_frequency_and_bitcount_validation) ... ok\ntest_13_truncation_and_trailing_data (__main__.Requirements.test_13_truncation_and_trailing_data) ... ok\ntest_14_checksum_and_payload_corruption (__main__.Requirements.test_14_checksum_and_payload_corruption) ... ok\ntest_15_padding_and_single_symbol_validation (__main__.Requirements.test_15_padding_and_single_symbol_validation) ... ok\ntest_16_output_resource_limit (__main__.Requirements.test_16_output_resource_limit) ... ok\ntest_17_default_names_and_spaces (__main__.Requirements.test_17_default_names_and_spaces) ... ok\ntest_18_seeded_round_trip_property (__main__.Requirements.test_18_seeded_round_trip_property) ... ok\ntest_19_seeded_malformed_archives (__main__.Requirements.test_19_seeded_malformed_archives) ... ok\ntest_20_output_io_failure (__main__.Requirements.test_20_output_io_failure) ... ok\ntest_21_independent_golden_archive (__main__.Requirements.test_21_independent_golden_archive) ... ok\n\n----------------------------------------------------------------------\nRan 21 tests in 1.145s\n\nOK\n"
+      "stderr": "test_01_text_round_trip (__main__.Requirements.test_01_text_round_trip) ... ok\ntest_02_all_byte_values (__main__.Requirements.test_02_all_byte_values) ... ok\ntest_03_empty (__main__.Requirements.test_03_empty) ... ok\ntest_04_single_symbol (__main__.Requirements.test_04_single_symbol) ... ok\ntest_05_incompressible (__main__.Requirements.test_05_incompressible) ... ok\ntest_06_deterministic_tree_and_frequencies (__main__.Requirements.test_06_deterministic_tree_and_frequencies) ... ok\ntest_07_stats (__main__.Requirements.test_07_stats) ... ok\ntest_08_help_and_invalid_syntax (__main__.Requirements.test_08_help_and_invalid_syntax) ... ok\ntest_09_missing_source (__main__.Requirements.test_09_missing_source) ... ok\ntest_10_no_clobber_and_input_alias (__main__.Requirements.test_10_no_clobber_and_input_alias) ... ok\ntest_11_bad_magic_version_flags_and_short_header (__main__.Requirements.test_11_bad_magic_version_flags_and_short_header) ... ok\ntest_12_frequency_and_bitcount_validation (__main__.Requirements.test_12_frequency_and_bitcount_validation) ... ok\ntest_13_truncation_and_trailing_data (__main__.Requirements.test_13_truncation_and_trailing_data) ... ok\ntest_14_checksum_and_payload_corruption (__main__.Requirements.test_14_checksum_and_payload_corruption) ... ok\ntest_15_padding_and_single_symbol_validation (__main__.Requirements.test_15_padding_and_single_symbol_validation) ... ok\ntest_16_output_resource_limit (__main__.Requirements.test_16_output_resource_limit) ... ok\ntest_17_default_names_and_spaces (__main__.Requirements.test_17_default_names_and_spaces) ... ok\ntest_18_seeded_round_trip_property (__main__.Requirements.test_18_seeded_round_trip_property) ... ok\ntest_19_seeded_malformed_archives (__main__.Requirements.test_19_seeded_malformed_archives) ... ok\ntest_20_output_io_failure (__main__.Requirements.test_20_output_io_failure) ... ok\ntest_21_independent_golden_archive (__main__.Requirements.test_21_independent_golden_archive) ... ok\n\n----------------------------------------------------------------------\nRan 21 tests in 0.956s\n\nOK\n"
     }
   ]
 }
