@@ -21,6 +21,6 @@ test_20_output_io_failure (__main__.Requirements) ... ok
 test_21_independent_golden_archive (__main__.Requirements) ... ok
 
 ----------------------------------------------------------------------
-Ran 21 tests in 1.035s
+Ran 21 tests in 1.448s
 
 OK

@@ -135,7 +135,7 @@ Stats compress(const fs::path& source,const fs::path& destination) {
         for(std::streamsize i=0;i<input.gcount();++i) {
             auto c=static_cast<unsigned char>(buffer[i]); ++observed[c]; ++seen; second_crc=crc_update(second_crc,c);
             for(bool bit:codes[c]) {
-                packed=static_cast<uint8_t>((packed<<1)|bit);
+                packed=static_cast<uint8_t>((static_cast<unsigned>(packed)<<1)|static_cast<unsigned>(bit));
                 if(++used==8) { out.put(static_cast<char>(packed)); packed=0; used=0; }
             }
         }
