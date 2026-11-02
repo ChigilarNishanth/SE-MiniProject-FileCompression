@@ -2,43 +2,34 @@
 #define HUFFMAN_TREE_HPP
 
 #include "common.hpp"
-#include <array>
-#include <cstddef>
 #include <memory>
-#include <string>
+#include <queue>
 #include <vector>
+#include <string>
 
-// US-03 / FR-04: deterministic model shared by future encoder and decoder.
-// This class consumes the existing FrequencyTable; it performs no file I/O.
-class HuffmanTree {
-public:
-    struct Node {
-        uint64_t frequency;
-        unsigned symbol;      // 0..255 for leaves; 256 for internal nodes.
-        unsigned min_symbol;  // Smallest byte in this subtree; stable tie-break.
-        const Node* left;
-        const Node* right;
+struct HuffmanNode {
+    uint8_t ch = 0;
+    uint64_t freq = 0;
+    std::shared_ptr<HuffmanNode> left = nullptr;
+    std::shared_ptr<HuffmanNode> right = nullptr;
 
-        bool is_leaf() const noexcept { return symbol < 256; }
-    };
-    using CodeTable = std::array<std::string, 256>;
-
-    // Throws std::overflow_error if the sum of frequencies exceeds uint64_t.
-    explicit HuffmanTree(const FrequencyTable& frequencies);
-    HuffmanTree(const HuffmanTree&) = delete;
-    HuffmanTree& operator=(const HuffmanTree&) = delete;
-
-    const Node* root() const noexcept { return root_; }
-    const CodeTable& codes() const noexcept { return codes_; }
-    std::size_t node_count() const noexcept { return nodes_.size(); }
-
-private:
-    // Own every node once; child/root pointers remain valid for this lifetime.
-    std::vector<std::unique_ptr<Node>> nodes_;
-    const Node* root_ = nullptr;
-    CodeTable codes_{};
-
-    void generate_codes(const Node* node, std::string& path);
+    HuffmanNode(uint8_t c, uint64_t f) : ch(c), freq(f) {}
+    HuffmanNode(uint64_t f, std::shared_ptr<HuffmanNode> l, std::shared_ptr<HuffmanNode> r)
+        : ch(0), freq(f), left(l), right(r) {}
 };
 
-#endif
+struct CompareNode {
+    bool operator()(const std::shared_ptr<HuffmanNode>& a, const std::shared_ptr<HuffmanNode>& b) const {
+        return a->freq > b->freq;
+    }
+};
+
+class HuffmanTree {
+public:
+    static std::shared_ptr<HuffmanNode> build(const FrequencyTable& freq_table);
+    static void generate_codes(const std::shared_ptr<HuffmanNode>& root, 
+                               std::string current_code, 
+                               std::string codes[256]);
+};
+
+#endif // HUFFMAN_TREE_HPP
