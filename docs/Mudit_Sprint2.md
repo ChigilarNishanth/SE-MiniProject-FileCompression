@@ -17,5 +17,5 @@ python3 tests/test_lossless.py build/czip /tmp/reference_restore --production-de
 
 Currently this gate fails because the team's production -d path validates only the header and creates no restored file. The oracle is not a production decoder and US-10 must not be marked fully accepted until the production gate passes. US-08 belongs to Mahesh; its implementation is not changed here.
 
-## Sprint 3
-The observed board has Sprint 1 and Sprint 2 only. No Sprint-3 story or acceptance criteria have been supplied. New sprint scope is awaiting clarification; no stories or completion records are invented.
+## Scope
+Only Mudit's Sprint-2 stories (#6, #9 and #10) are included. No Sprint-3 work is included.
