@@ -51,6 +51,8 @@ bool CompressionEngine::compress(const std::string& input_path, const std::strin
     }
 
     writer.flush();
+    out_file.flush();
+    if (!out_file) { std::cerr << "Error: Archive write failed\n"; return false; }
     out_file.close();
     in_file.close();
 
