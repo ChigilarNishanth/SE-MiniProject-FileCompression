@@ -1,28 +1,18 @@
 #include "compression_engine.hpp"
 #include "archive_io.hpp"
+#include "freq_analyzer.hpp"
 #include "huffman_tree.hpp"
 #include "bit_stream.hpp"
 #include <fstream>
 #include <iostream>
 
 bool CompressionEngine::compress(const std::string& input_path, const std::string& output_path) {
-    std::ifstream in_file(input_path, std::ios::binary);
-    if (!in_file.is_open()) {
-        std::cerr << "Error: Cannot open source file " << input_path << std::endl;
-        return false;
-    }
-
     FrequencyTable freq_table;
     uint64_t original_size = 0;
-    char byte;
 
-    while (in_file.get(byte)) {
-        freq_table.counts[static_cast<uint8_t>(byte)]++;
-        original_size++;
+    if (!FrequencyAnalyzer::analyze_file(input_path, freq_table, original_size)) {
+        return false;
     }
-
-    in_file.clear();
-    in_file.seekg(0, std::ios::beg);
 
     std::ofstream out_file(output_path, std::ios::binary);
     if (!out_file.is_open()) {
@@ -44,7 +34,14 @@ bool CompressionEngine::compress(const std::string& input_path, const std::strin
     std::string codes[256];
     HuffmanTree::generate_codes(root, "", codes);
 
+    std::ifstream in_file(input_path, std::ios::binary);
+    if (!in_file.is_open()) {
+        std::cerr << "Error: Cannot open source file " << input_path << std::endl;
+        return false;
+    }
+
     BitWriter writer(out_file);
+    char byte;
     while (in_file.get(byte)) {
         uint8_t ubyte = static_cast<uint8_t>(byte);
         writer.write_code(codes[ubyte]);
