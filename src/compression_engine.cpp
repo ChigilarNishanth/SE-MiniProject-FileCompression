@@ -1,4 +1,5 @@
 #include "compression_engine.hpp"
+#include "decompression_engine.hpp"
 #include "archive_io.hpp"
 #include "freq_analyzer.hpp"
 #include "huffman_tree.hpp"
@@ -58,4 +59,8 @@ bool CompressionEngine::compress(const std::string& input_path, const std::strin
               << " (" << original_size << " bytes)" << std::endl;
 
     return true;
+}
+
+bool CompressionEngine::decompress(const std::string& archive_path, const std::string& output_path) {
+    return DecompressionEngine::decompress(archive_path, output_path);
 }
