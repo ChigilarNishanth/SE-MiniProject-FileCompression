@@ -30,3 +30,10 @@ jobs:
     - name: Verify Executable Execution
       run: |
         ./build/czip --help
+
+    - name: Validate Mudit bit packing and SHA-256 compression fixtures
+      run: |
+        g++ -std=c++17 -Wall -Wextra -Werror -Iinclude src/bit_stream.cpp tests/bit_stream_tests.cpp -o /tmp/bit_tests
+        /tmp/bit_tests /tmp/packed_test.bin
+        g++ -std=c++17 -Wall -Wextra -Werror -Iinclude src/archive_io.cpp src/huffman_tree.cpp tests/reference_restore.cpp -o /tmp/reference_restore
+        python3 tests/test_lossless.py build/czip /tmp/reference_restore
