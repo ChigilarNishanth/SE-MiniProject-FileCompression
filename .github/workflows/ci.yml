@@ -10,7 +10,8 @@ permissions:
   contents: read
 
 jobs:
-  build-and-smoke-test:
+  build-and-test:
+    name: Build & Automated Unit Tests
     runs-on: ubuntu-latest
 
     steps:
@@ -22,18 +23,26 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y build-essential cmake
 
-    - name: Compile C++ File Compression Utility
+    - name: Compile C++ File Compression Utility (US-05)
       run: |
         mkdir -p build
-        g++ -std=c++17 -O2 -Wall -Wextra -Iinclude src/cli_parser.cpp src/archive_io.cpp src/huffman_tree.cpp src/bit_stream.cpp src/compression_engine.cpp src/main.cpp -o build/czip
+        g++ -std=c++17 -O2 -Wall -Wextra -Iinclude src/cli_parser.cpp src/archive_io.cpp src/freq_analyzer.cpp src/huffman_tree.cpp src/bit_stream.cpp src/compression_engine.cpp src/main.cpp -o build/czip
 
-    - name: Verify Executable Execution
+    - name: Verify CLI Executable Execution
       run: |
         ./build/czip --help
 
-    - name: Validate Mudit bit packing and SHA-256 compression fixtures
+    - name: Compile and Run Frequency Analyzer Unit Tests (US-02)
+      run: |
+        g++ -std=c++17 -Wall -Wextra -Werror -Iinclude src/freq_analyzer.cpp tests/freq_analyzer_tests.cpp -o /tmp/freq_tests
+        /tmp/freq_tests
+
+    - name: Compile and Run Bitstream Packing Unit Tests (US-06)
       run: |
         g++ -std=c++17 -Wall -Wextra -Werror -Iinclude src/bit_stream.cpp tests/bit_stream_tests.cpp -o /tmp/bit_tests
         /tmp/bit_tests /tmp/packed_test.bin
+
+    - name: Compile and Run SHA-256 Lossless Verification Fixtures (US-09, US-10)
+      run: |
         g++ -std=c++17 -Wall -Wextra -Werror -Iinclude src/archive_io.cpp src/huffman_tree.cpp tests/reference_restore.cpp -o /tmp/reference_restore
         python3 tests/test_lossless.py build/czip /tmp/reference_restore
