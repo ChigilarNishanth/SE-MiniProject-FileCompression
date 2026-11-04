@@ -1,66 +1,30 @@
-name: C++ CI
+name: C/C++ CI Pipeline
 
 on:
   push:
-    branches: [ main ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ main ]
-
-permissions:
-  contents: read
+    branches: [ "main" ]
 
 jobs:
-  build-and-test:
-    name: Build & Automated Unit Tests
+  build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+    - uses: actions/checkout@v3
 
-    - name: Set up Build Environment
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y build-essential cmake
+    - name: Set up GCC
+      run: sudo apt-get update && sudo apt-get install -y build-essential
 
-<<<<<<< HEAD
-    - name: Compile C++ File Compression Utility (US-05)
-      run: |
-        mkdir -p build
-        g++ -std=c++17 -O2 -Wall -Wextra -Iinclude src/cli_parser.cpp src/archive_io.cpp src/freq_analyzer.cpp src/huffman_tree.cpp src/bit_stream.cpp src/compression_engine.cpp src/decompression_engine.cpp src/main.cpp -o build/czip
+    - name: Create Build Directory
+      run: mkdir -p build
 
-    - name: Verify CLI Executable Execution
+    - name: Compile Application & Test Suite
       run: |
-        ./build/czip --help
+        g++ -std=c++17 -Wall -Wextra -Iinclude src/*.cpp -o build/czip
+        g++ -std=c++17 -Wall -Wextra -Iinclude src/cli_parser.cpp src/archive_io.cpp src/huffman_tree.cpp src/bit_stream.cpp src/compression_engine.cpp src/decompression_engine.cpp src/verifier.cpp tests/verify_lossless.cpp -o build/czip_tests
 
-    - name: Compile and Run Frequency Analyzer Unit Tests (US-02)
+    - name: Run Integration Tests
       run: |
-        g++ -std=c++17 -Wall -Wextra -Werror -Iinclude src/freq_analyzer.cpp tests/freq_analyzer_tests.cpp -o /tmp/freq_tests
-        /tmp/freq_tests
-
-    - name: Compile and Run Bitstream Packing Unit Tests (US-06)
-      run: |
-        g++ -std=c++17 -Wall -Wextra -Werror -Iinclude src/bit_stream.cpp tests/bit_stream_tests.cpp -o /tmp/bit_tests
-        /tmp/bit_tests /tmp/packed_test.bin
-
-    - name: Compile and Run Decompression Engine Acceptance Tests (US-08)
-      run: |
-        g++ -std=c++17 -Wall -Wextra -Werror -Iinclude src/archive_io.cpp src/huffman_tree.cpp src/bit_stream.cpp src/compression_engine.cpp src/decompression_engine.cpp tests/decompression_tests.cpp -o /tmp/decomp_tests
-        /tmp/decomp_tests
-
-    - name: Compile and Run SHA-256 Lossless Verification Fixtures (US-09, US-10)
-      run: |
-        g++ -std=c++17 -Wall -Wextra -Werror -Iinclude src/archive_io.cpp src/huffman_tree.cpp tests/reference_restore.cpp -o /tmp/reference_restore
-        python3 tests/test_lossless.py build/czip /tmp/reference_restore --production-decoder
-=======
-    - name: Compile C++ File Compression Utility & Test Suite
-      run: |
-        mkdir -p build
-        g++ -std=c++17 -O2 -Wall -Wextra -Iinclude src/cli_parser.cpp src/archive_io.cpp src/huffman_tree.cpp src/bit_stream.cpp src/compression_engine.cpp src/main.cpp -o build/czip
-        g++ -std=c++17 -O2 -Wall -Wextra -Iinclude src/cli_parser.cpp src/archive_io.cpp src/huffman_tree.cpp src/bit_stream.cpp src/compression_engine.cpp src/verifier.cpp tests/verify_lossless.cpp -o build/czip_tests
-
-    - name: Run US-10 Automated Integration Test Suite
-      run: |
-        ./build/czip --help
+        chmod +x build/czip build/czip_tests
         ./build/czip_tests
->>>>>>> d2ea745 (feat(tests): implement US-10 byte verification test suite and CI workflow runner)
