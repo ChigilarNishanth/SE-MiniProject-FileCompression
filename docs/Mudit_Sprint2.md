@@ -7,15 +7,13 @@ Validated byte boundaries, zero padding, repeated flush and destructor flush. In
 Successful compression reports actual input/archive byte sizes, percentage savings and elapsed milliseconds using std::chrono. Empty input reports zero savings; archive overhead can produce negative savings. Stream write failures are propagated before reporting success.
 
 ## US-10: SHA-256 verification
-Six generated fixtures (empty, single symbol, text, every byte value, seeded random binary and PPM image) are compressed with the actual CLI. A clearly labelled test-only restoration oracle verifies SHA-256 and exact bytes. Statistics are verified against actual filesystem sizes and independently calculated savings.
-
-Run the production acceptance gate after US-08 is integrated:
+The original six fixtures verified SHA-256 and exact bytes using a test-only restoration oracle while US-08 was in progress. US-08 is now merged. The current production acceptance suite uses the CLI for both compression and decompression, includes a one-byte file, and checks SHA-256, exact bytes, sizes, savings and timing.
 
 ```sh
-python3 tests/test_lossless.py build/czip /tmp/reference_restore --production-decoder
+python3 tests/test_lossless.py build/czip --production-decoder
 ```
 
-Currently this gate fails because the team's production -d path validates only the header and creates no restored file. The oracle is not a production decoder and US-10 must not be marked fully accepted until the production gate passes. US-08 belongs to Mahesh; its implementation is not changed here.
+See the [Part 3 unit test report](Unit_Test_Report.md) for the verified results.
 
 ## Scope
 Only Mudit's Sprint-2 stories (#6, #9 and #10) are included. No Sprint-3 work is included.

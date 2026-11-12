@@ -13,11 +13,14 @@ import tempfile
 
 parser = argparse.ArgumentParser()
 parser.add_argument('executable', type=Path)
-parser.add_argument('reference_restore', type=Path)
+parser.add_argument('reference_restore', type=Path, nargs='?')
 parser.add_argument('--production-decoder', action='store_true')
 args = parser.parse_args()
-exe, reference = args.executable.resolve(), args.reference_restore.resolve()
-fixtures = {'empty': b'', 'single': b'A' * 10001,
+if not args.production_decoder and args.reference_restore is None:
+    parser.error('reference_restore is required unless --production-decoder is used')
+exe = args.executable.resolve()
+reference = args.reference_restore.resolve() if args.reference_restore else None
+fixtures = {'empty': b'', 'one_byte': b'\x00', 'single': b'A' * 10001,
             'text': b'Huffman lossless compression verification.\n' * 500,
             'binary': bytes(range(256)) * 100,
             'random': random.Random(279).randbytes(65536),
@@ -44,4 +47,4 @@ with tempfile.TemporaryDirectory() as directory:
         assert hashlib.sha256(data).digest() == hashlib.sha256(recovered).digest(), name
         assert data == recovered, name
         print('PASS:', name, 'SHA-256 and exact bytes; sizes/savings/time verified')
-print('Decoder mode:', 'PRODUCTION CLI' if args.production_decoder else 'TEST-ONLY ORACLE; production US-08 pending')
+print('Decoder mode:', 'PRODUCTION CLI' if args.production_decoder else 'TEST-ONLY ORACLE')

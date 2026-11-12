@@ -24,6 +24,12 @@ jobs:
         g++ -std=c++17 -Wall -Wextra -Iinclude src/*.cpp -o build/czip
         g++ -std=c++17 -Wall -Wextra -Iinclude src/cli_parser.cpp src/archive_io.cpp src/huffman_tree.cpp src/bit_stream.cpp src/compression_engine.cpp src/decompression_engine.cpp src/verifier.cpp tests/verify_lossless.cpp -o build/czip_tests
 
+    - name: Run Isolated Unit Tests
+      run: python3 tests/run_unit_tests.py
+
+    - name: Verify SHA-256 Using Production CLI
+      run: python3 tests/test_lossless.py build/czip --production-decoder
+
     - name: Run Integration Tests
       run: |
         chmod +x build/czip build/czip_tests
