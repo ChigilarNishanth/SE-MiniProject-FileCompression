@@ -115,10 +115,10 @@
 mkdir build
 
 # Compile czip Main Binary
-g++ -std=c++17 -Wall -Wextra -Iinclude src/cli_parser.cpp src/archive_io.cpp src/huffman_tree.cpp src/bit_stream.cpp src/compression_engine.cpp src/decompression_engine.cpp src/verifier.cpp src/main.cpp -o build/czip.exe
+g++ -std=c++17 -Wall -Wextra -Iinclude src/cli_parser.cpp src/archive_io.cpp src/freq_analyzer.cpp src/huffman_tree.cpp src/bit_stream.cpp src/compression_engine.cpp src/decompression_engine.cpp src/verifier.cpp src/main.cpp -o build/czip.exe
 
 # Compile Test Suite Binary
-g++ -std=c++17 -Wall -Wextra -Iinclude src/cli_parser.cpp src/archive_io.cpp src/huffman_tree.cpp src/bit_stream.cpp src/compression_engine.cpp src/decompression_engine.cpp src/verifier.cpp tests/verify_lossless.cpp -o build/czip_tests.exe
+g++ -std=c++17 -Wall -Wextra -Iinclude src/cli_parser.cpp src/archive_io.cpp src/freq_analyzer.cpp src/huffman_tree.cpp src/bit_stream.cpp src/compression_engine.cpp src/decompression_engine.cpp src/verifier.cpp tests/verify_lossless.cpp -o build/czip_tests.exe
 
 ```
 
